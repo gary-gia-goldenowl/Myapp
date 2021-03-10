@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.references :user 
       t.references :category
 
-      t.string :title
+      t.string :title ,null: false
       t.text :content
       t.string :images
 
