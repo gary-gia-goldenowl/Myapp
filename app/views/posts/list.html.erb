@@ -1,6 +1,9 @@
 <h1>All posts </h1>
 <% @posts.each do |post| %>
-    <li><%=post.title %> <br>
-        <%=post.content %>
-    </li><br>
+    <li>
+        <%= post.title %> 
+        <br />
+        <%= post.content %>
+    </li>
+    <br />
 <% end %>
