@@ -1,3 +1,24 @@
-<h1>Home#index</h1>
-<p style="color:red;">Find me in app/views/home/index.html.erb</p>
+<h1>Home</h1>
 
+<% all_users = 0 %>
+<% all_posts = 0 %>
+<% all_categories = 0 %>
+
+<h1>All users</h1>
+<% @users.each do |user| %>
+    <% all_users = all_users +1 %>
+<% end %>
+<%= all_users %> users in the databases
+
+<h1>All posts </h1>
+<% @posts.each do |post| %>
+    <% all_posts = all_posts +1 %>
+<% end %>
+<%= all_posts %> posts in the databases
+
+
+<h1>All categories </h1>
+<% @categories.each do |category| %>
+    <% all_categories = all_categories+1 %>
+<% end %>
+<%= all_categories %> categories in the databases
