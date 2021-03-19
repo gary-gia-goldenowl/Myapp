@@ -7,7 +7,7 @@
 <h2>Role: <%= @users.role %> </h2>
 <h2>Created at: <%= @users.created_at %> </h2>
 <h2>Updated at: <%= @users.updated_at %> </h2>
-
+<%= link_to 'Delete User', user_path(@users), method: :delete %>
 
 
 
