@@ -15,7 +15,6 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(my_params)
-        puts "First name is: '#{@user.first_name}"
         if !@user.save
             render :new
         else
@@ -39,6 +38,11 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find(params[:id]).destroy
+        if !@user.save
+            render :new
+        else
+            redirect_to users_path
+        end 
         # redirect_to users_path
     end
 

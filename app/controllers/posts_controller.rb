@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     end
 
     def show
-        @post = User.find(params[:user_id]).posts
+        @post = Post.find(params[:id])
 
         #if !@posts
             #redirect_to users_path
@@ -33,9 +33,26 @@ class PostsController < ApplicationController
     end
 
     def update
+        @post = Post.find(params[:id])
+        
+        if @post.update(my_params)
+            redirect_to post_path
+        else
+            render action: :edit
+        end
+    end
+    
+    def edit
+        @post = Post.find(params[:id])
     end
 
     def destroy
+        @post = Post.find(params[:id]).destroy
+        if !@post.save
+            render :new
+        else
+            redirect_to post_path
+        end 
     end
     
     private

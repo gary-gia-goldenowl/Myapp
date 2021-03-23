@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
     end
 
     def show
-        @category = User.find(params[:user_id]).categories
+        @category = Category.find(params[:id])
     end
 
     def new
@@ -27,23 +27,28 @@ class CategoriesController < ApplicationController
         end
     end
 
-    # def update
-    #     @user = User.find params[:id]
+    def update
+        @category = Category.find(params[:id])
         
-    #     if @user.update(my_params)
-    #         redirect_to user_path
-    #     else
-    #         render action: :edit
-    #     end
-    # end
+        if @category.update(my_params)
+            redirect_to category_path
+        else
+            render action: :edit
+        end
+    end
     
-    # def edit
-    #     @user = User.find(params[:id])
-    # end
+    def edit
+        @category = Category.find(params[:id])
+    end
 
-    # def destroy
-    #     @user = User.find params[:id].destroy
-    # end
+    def destroy
+        @category = Category.find(params[:id]).destroy
+        if !@category.save
+            render :new
+        else
+            redirect_to post_path
+        end 
+    end
 
     private
     def my_params

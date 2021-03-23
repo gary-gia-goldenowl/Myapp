@@ -1,0 +1,15 @@
+<%= form_for @category do |f| %>
+    <br />
+    <% @category.errors.full_messages.each do |message| %>
+        <li> <%= message %> </li>
+    <% end %>
+    
+    <%= f.label :title %>
+    <%= f.text_field :title %> <br>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %> <br>
+    
+    <br><%= f.submit %> 
+
+<% end %>

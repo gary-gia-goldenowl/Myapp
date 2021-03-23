@@ -4,4 +4,5 @@
 <h2>Description: <%= @category.description %> </h2>
 <h2>Created at: <%= @category.created_at %> </h2>
 <h2>Updated at: <%= @category.updated_at %> </h2>
+<%= link_to 'Delete Category', category_path(@category), method: :delete %>
 
