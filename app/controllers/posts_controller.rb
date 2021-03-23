@@ -48,10 +48,10 @@ class PostsController < ApplicationController
 
     def destroy
         @post = Post.find(params[:id]).destroy
-        if !@post.save
-            render :new
-        else
+        if @post.destroyed?
             redirect_to post_path
+        else
+            render :new
         end 
     end
     

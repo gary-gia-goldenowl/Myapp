@@ -43,10 +43,10 @@ class CategoriesController < ApplicationController
 
     def destroy
         @category = Category.find(params[:id]).destroy
-        if !@category.save
-            render :new
+        if @category.destroyed?
+            redirect_to category_path
         else
-            redirect_to post_path
+            render :new
         end 
     end
 
