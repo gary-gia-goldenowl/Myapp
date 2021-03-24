@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-    
+
     def index
-        @users = User.all
+        @users = User.order("first_name ASC")
         @categories = Category.all
     end
 
@@ -38,15 +38,27 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find(params[:id]).destroy
-        if !@user.save
-            render :new
+
+        if @user.destroyed?
+            redirect_to user_path
         else
-            redirect_to users_path
+            render :new
         end 
-        # redirect_to users_path
     end
 
+    def male
+        @users = User.all
+        @males = @users.male
+    end
 
+    def female
+        @users = User.all
+        @females = @users.female
+    end
+
+    def top
+        @users = User.joins(:posts).group('users.id').having('count(posts) >3').order("count(posts.user_id) desc")
+    end
 
     private
     def my_params

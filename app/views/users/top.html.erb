@@ -1,0 +1,9 @@
+<h1>All top posts users (post>3) </h1>
+<% @users.each do |user| %>
+    <br>
+    Name: <%= user.first_name %> <%= user.last_name %> <br>
+    Email: <%= user.email %><br>
+    Avatar: <%= user.avatar %><br>
+    Age: <%= user.age %><br>
+    Role: <%= user.role %><br> 
+<% end %>

@@ -3,9 +3,9 @@ class CategoriesController < ApplicationController
     
     def index
         if params[:user_id]
-            @categories = User.find(params[:user_id]).categories
+            @categories = User.find(params[:user_id]).categories.order("title ASC")
         else
-            @categories = Category.all
+            @categories = Category.order("title ASC")
         end
     end
 

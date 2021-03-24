@@ -1,0 +1,10 @@
+<h1>All male users</h1><br>
+<% @males.each do |user| %>
+    Name: <%= user.first_name %> <%= user.last_name %> <br>
+    Email: <%= user.email %><br>
+    Avatar: <%= user.avatar %><br>
+    Age: <%= user.age %><br>
+    Role: <%= user.role %><br>
+    <br> <br> <br>
+
+  <% end %>
