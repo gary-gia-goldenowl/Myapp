@@ -10,10 +10,6 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-
-        #if !@posts
-            #redirect_to users_path
-        #end
     end
 
     def new
