@@ -1,7 +1,4 @@
 <h1>All users</h1>
-<% @users.each do |user| %>
-    <li>
-        <%= render partial: "info",collection: @users, as: "user"  %>
-    </li>
-
+<% @users.each do |u| %>
+    <%= render partial: 'info', locals: { user: u } %>
 <% end %>

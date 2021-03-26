@@ -1,6 +1,2 @@
 <h1>All male users</h1><br>
-<% @males.each do |user| %>
-  <%= render partial: "info",collection: @users, as: "user"  %>
-
-
-  <% end %>
+<%= render partial: "info", collection: @males, as: "user" %>

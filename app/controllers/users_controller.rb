@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-    layout "navbar"
-
     def index
         @users = User.order("first_name ASC")
         @categories = Category.all
@@ -48,12 +46,12 @@ class UsersController < ApplicationController
     end
 
     def male
-        @users = User.all
+        @users = User.order("first_name ASC")
         @males = @users.male
     end
 
     def female
-        @users = User.all
+        @users = User.order("first_name ASC")
         @females = @users.female
     end
 
