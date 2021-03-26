@@ -1,10 +1,2 @@
 <h1>All female users</h1><br>
-<% @females.each do |user| %>
-    Name: <%= user.first_name %> <%= user.last_name %> <br>
-    Email: <%= user.email %><br>
-    Avatar: <%= user.avatar %><br>
-    Age: <%= user.age %><br>
-    Role: <%= user.role %><br>
-    <br> <br> <br>
-
-  <% end %>
+<%= render partial: "info", collection: @females, as: "user" %>

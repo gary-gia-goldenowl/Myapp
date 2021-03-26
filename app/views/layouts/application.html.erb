@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>My new app</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,21 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+
 </html>
+    <body>
+      <div class="nav">
+        <ul>
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#" class="nav-link"><em>Act Now!</em></a></li>
+        <li><a href="#" class="nav-link">FAQ</a></li>
+        <li><a href="#" class="nav-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div id = "content">
+        <%= yield -%>
+      </div>
+    </div>
+
+    </body>

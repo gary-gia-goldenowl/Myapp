@@ -1,12 +1,12 @@
 class CategoriesController < ApplicationController
-    
-    
     def index
         if params[:user_id]
             @categories = User.find(params[:user_id]).categories.order("title ASC")
         else
             @categories = Category.order("title ASC")
         end
+
+        
     end
 
     def show
