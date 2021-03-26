@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    layout "navbar"
 
     def index
         @users = User.order("first_name ASC")

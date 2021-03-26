@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  layout "navbar"
 
   def index
       @posts = Post.all

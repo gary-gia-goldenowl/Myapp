@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    layout "navbar"
 
     def index
         if params[:user_id]
