@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       resources :posts
     end
   end  
-
   resources :categories
   resources :posts
   root to: 'home#index'

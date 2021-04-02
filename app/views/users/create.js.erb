@@ -1,0 +1,4 @@
+var userRow = document.querySelector("#users")
+var user = "<%= escape_javascript(render @user) %>"
+
+userRow.insertAdjacentHTML("beforeend",user)
