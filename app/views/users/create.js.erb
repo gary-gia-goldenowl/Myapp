@@ -1,4 +1,4 @@
-var a = document.querySelector("#users")
-var b = "<%= escape_javascript(render @user) %>"
+var userRow = document.querySelector("#users")
+var user = "<%= escape_javascript(render @user) %>"
 
-a.insertAdjacentHTML("beforeend",b)
+userRow.insertAdjacentHTML("beforeend",user)
