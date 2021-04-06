@@ -1,4 +1,29 @@
 var userRow = document.querySelector("#users")
 var user = "<%= escape_javascript(render @user) %>"
-
 userRow.insertAdjacentHTML("beforeend",user)
+
+var userfNameRow = document.querySelector("#fnameBlock")
+var errorName ="<%= escape_javascript(@errorName[0])%>"  
+userfNameRow.innerHTML = errorName
+
+var userlNameRow = document.querySelector("#lnameBlock")
+userlNameRow.innerHTML = errorName
+
+var userEmailRow = document.querySelector("#emailBlock")
+var errorEmail ="<%= escape_javascript(@errorEmail[0])%>"  
+var errorEmail2 ="<%= escape_javascript(@errorEmail2[0])%>"  
+userEmailRow.innerHTML = errorEmail + "," + errorEmail2
+
+var userGenderRow = document.querySelector("#genderBlock")
+var errorGender ="<%= escape_javascript(@errorGender[0])%>"  
+var errorGender2 ="<%= escape_javascript(@errorGender2[0])%>"  
+userGenderRow.innerHTML = errorGender + "," + errorGender2
+
+var userAgeRow = document.querySelector("#ageBlock")
+var errorAge ="<%= escape_javascript(@errorAge[0])%>"  
+userAgeRow.innerHTML = errorAge
+
+var userRoleRow = document.querySelector("#roleBlock")
+var errorRole ="<%= escape_javascript(@errorRole[0])%>" 
+var errorRole2 ="<%= escape_javascript(@errorRole2[0])%>"  
+userRoleRow.innerHTML = errorRole + "," + errorRole2 
