@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     def index
         if params[:user_id]
             @posts = User.find(params[:user_id]).posts
+            @post = Post.new
         else
             @posts = Post.all
         end    
@@ -52,6 +53,6 @@ class PostsController < ApplicationController
     
     private
     def my_params
-        params.require(:post).permit(:user_id, :category_id, :title, :content, :images)
+        params.require(:post).permit(:user_id, :category_id, :title, :content, images: [])
     end
 end
