@@ -26,6 +26,7 @@ class UsersController < ApplicationController
             @errorRole = []
             @errorRole2 = []
             if @user.save
+                UserMailer.welcome_email(@user).deliver_now
                 format.html { redirect_to @user, notice: 'User was successfully created.' }
                 format.js   {}
                 format.json { render json: @user, status: :created, location: @user }
