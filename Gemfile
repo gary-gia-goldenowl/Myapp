@@ -58,3 +58,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem "letter_opener", :group => :development
+
+# Run against this stable release
+# Run against this stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
+end
