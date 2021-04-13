@@ -26,14 +26,14 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "POST users#show" do
+  describe "GET users#show" do
     it "Show user" do
       get "/users/#{@user1.id}", params: {id: @user1.id}
       expect(response).to have_http_status(200)
     end  
   end
 
-  describe "POST users#new" do
+  describe "GET users#new" do
   it "New user" do
     get new_user_path
     expect(response).to have_http_status(200)
