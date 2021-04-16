@@ -1,10 +1,10 @@
 <tr id=<%= user.id %>>
+
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td>Email: <%= user.email %></td>
-    <td>Avatar: <%= user.avatar %></td>
+    <td>Avatar: <%= user.avatar %>
     <td>Age: <%= user.age %></td>
     <td>Role: <%= user.role %></td>
     <td><%= link_to 'Destroy', user, method: :delete,remote: :true,  class:"destroy-user" %></td>
 </tr>
-    
